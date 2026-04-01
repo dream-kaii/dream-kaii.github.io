@@ -29,3 +29,286 @@
   --border-style: 1px solid rgb(169, 169, 169);
   --backdrop-filter: blur(5px) saturate(150%);
 }
+
+/* ============================================
+   全局毛玻璃效果 - 所有卡片透明模糊
+   ============================================ */
+
+/* 基础变量定义 */
+:root {
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --card-bg-dark: rgba(30, 30, 30, 0.7);
+  --blur-radius: 20px;
+  --card-radius: 18px;
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --card-border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   1. 文章列表卡片（首页博客内容卡片）
+   ============================================ */
+#recent-posts > .recent-post-item {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 文章卡片悬停效果 */
+/* #recent-posts > .recent-post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.75) !important;
+} */
+
+/* 极简悬停效果 */
+.recent-post-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.recent-post-item:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
+}
+
+/* 文章卡片图片区域 */
+#recent-posts > .recent-post-item .post_cover {
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  overflow: hidden;
+}
+
+/* 文章卡片内容区域 */
+#recent-posts > .recent-post-item .recent-post-info {
+  background: transparent !important;
+  padding: 20px;
+}
+
+/* ============================================
+   2. 侧边栏所有卡片（个人信息、网站信息等）
+   ============================================ */
+/* #aside-content .card-widget {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+} */
+
+/* 侧边栏卡片悬停 */
+#aside-content .card-widget:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* 个人信息卡片特殊样式 */
+/* #aside-content .card-info {
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(240,240,255,0.7) 100%) !important;
+  text-align: center;
+  padding: 25px 20px;
+} */
+
+/* 头像样式优化 */
+#aside-content .card-info .avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+#aside-content .card-info .avatar-img:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 网站信息卡片 */
+#aside-content .card-webinfo {
+  background: var(--card-bg) !important;
+}
+
+/* 公告栏卡片 */
+#aside-content .card-announcement {
+  background: linear-gradient(135deg, rgba(255,245,230,0.7) 0%, rgba(255,255,255,0.65) 100%) !important;
+}
+
+/* 最新文章/热门文章等列表卡片 */
+#aside-content .card-recent-post,
+#aside-content .card-popular-post {
+  background: var(--card-bg) !important;
+}
+
+/* ============================================
+   3. 文章正文页卡片
+   ============================================ */
+#post,
+#page {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  padding: 40px;
+}
+
+/* 文章内代码块毛玻璃 */
+#post .highlight,
+#page .highlight {
+  background: rgba(40, 44, 52, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   4. 页脚毛玻璃
+   ============================================ */
+/* #footer {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.08);
+  border-top: var(--card-border);
+  margin-top: 40px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* 页脚内容 */
+/* #footer-wrap {
+  background: transparent !important;
+} */ */
+
+/* ============================================
+   5. 导航栏毛玻璃
+   ============================================ */
+/* #nav {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: var(--card-border);
+} */
+
+/* 导航栏菜单项 */
+/* #nav .menus_items .menus_item {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  margin: 0 5px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+#nav .menus_items .menus_item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+} */
+
+/* ============================================
+   6. 分页/按钮等元素
+   ============================================ */
+.pagination,
+.layout > .recent-posts .pagination__extend,
+.layout > .recent-posts .pagination .page-number {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: var(--card-border);
+}
+
+/* 按钮毛玻璃 */
+/* .button--primary,
+.btn--primary {
+  background: rgba(66, 133, 244, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.button--primary:hover {
+  background: rgba(66, 133, 244, 0.95) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+} */
+
+/* ============================================
+   7. 标签云/分类卡片
+   ============================================ */
+#tag,
+#category {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(var(--blur-radius)) saturate(180%);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  padding: 40px;
+}
+
+/* 标签样式 */
+#tag .tag-cloud-list a,
+#category .category-list a {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 5px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+#tag .tag-cloud-list a:hover,
+#category .category-list a:hover {
+  background: rgba(66, 133, 244, 0.85) !important;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+/* ============================================
+   8. 深色模式适配（自动切换）
+   ============================================ */
+[data-theme="dark"] {
+  --card-bg: var(--card-bg-dark);
+}
+
+[data-theme="dark"] #recent-posts > .recent-post-item,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] #post,
+[data-theme="dark"] #page,
+[data-theme="dark"] #footer,
+[data-theme="dark"] #nav {
+  background: rgba(30, 30, 30, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] #nav {
+  background: rgba(30, 30, 30, 0.85) !important;
+}
+
+/* ============================================
+   9. 移动端优化
+   ============================================ */
+@media screen and (max-width: 768px) {
+  #recent-posts > .recent-post-item,
+  #aside-content .card-widget,
+  #post,
+  #page {
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+  }
+  
+  #aside-content .card-info .avatar-img {
+    width: 80px;
+    height: 80px;
+  }
+}
