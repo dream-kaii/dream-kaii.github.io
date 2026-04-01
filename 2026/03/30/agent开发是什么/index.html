@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Java 开发者如何转型 Agent 开发 | kaii的博客</title><meta name="author" content="kaii"><meta name="copyright" content="kaii"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="面向传统 Java 开发者的 Agent 开发入门指南，梳理核心概念与必备技术栈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 开发者如何转型 Agent 开发">
+<meta property="og:url" content="http://example.com/2026/03/30/agent%E5%BC%80%E5%8F%91%E6%98%AF%E4%BB%80%E4%B9%88/index.html">
+<meta property="og:site_name" content="kaii的博客">
+<meta property="og:description" content="面向传统 Java 开发者的 Agent 开发入门指南，梳理核心概念与必备技术栈">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/touxiang.jpg">
+<meta property="article:published_time" content="2026-03-30T10:41:00.000Z">
+<meta property="article:modified_time" content="2026-04-01T07:43:36.148Z">
+<meta property="article:author" content="kaii">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="AI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/touxiang.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Java 开发者如何转型 Agent 开发",
+  "url": "http://example.com/2026/03/30/agent%E5%BC%80%E5%8F%91%E6%98%AF%E4%BB%80%E4%B9%88/",
+  "image": "http://example.com/img/touxiang.jpg",
+  "datePublished": "2026-03-30T10:41:00.000Z",
+  "dateModified": "2026-04-01T07:43:36.148Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "kaii",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/03/30/agent%E5%BC%80%E5%8F%91%E6%98%AF%E4%BB%80%E4%B9%88/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java 开发者如何转型 Agent 开发',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg" style="background-image: url(/img/index-my.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">kaii的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Java 开发者如何转型 Agent 开发</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Java 开发者如何转型 Agent 开发</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-30T10:41:00.000Z" title="发表于 2026-03-30 18:41:00">2026-03-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-01T07:43:36.148Z" title="更新于 2026-04-01 15:43:36">2026-04-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Java-开发者如何转型-Agent-开发"><a href="#Java-开发者如何转型-Agent-开发" class="headerlink" title="Java 开发者如何转型 Agent 开发"></a>Java 开发者如何转型 Agent 开发</h1><h2 id="一、什么是-Agent-开发"><a href="#一、什么是-Agent-开发" class="headerlink" title="一、什么是 Agent 开发"></a>一、什么是 Agent 开发</h2><p>Agent 开发是构建能够自主感知环境、做出决策并执行任务的智能系统。与传统软件按固定逻辑运行不同，Agent 具备动态推理能力，能根据上下文灵活调整行为。</p>
+<p>一个典型 Agent 包含四个核心能力：规划拆解复杂任务、调用外部工具获取信息、记忆历史交互上下文、以及最终执行具体动作。这种架构让 Agent 不再只是被动回答问题，而是能主动完成目标。</p>
+<h2 id="二、与传统-Java-开发的区别"><a href="#二、与传统-Java-开发的区别" class="headerlink" title="二、与传统 Java 开发的区别"></a>二、与传统 Java 开发的区别</h2><p>传统 Java 开发遵循明确的输入输出逻辑，业务规则由代码硬编码，系统行为完全可控但缺乏弹性。Agent 开发则引入不确定性，系统通过大模型推理决策，行为随上下文变化，需要设计容错和兜底机制。</p>
+<p>开发重心也从编写业务逻辑转向设计提示词、编排工具链和管理 Agent 状态。调试方式随之改变，需要观察推理过程而非仅看最终结果。</p>
+<h2 id="三、必备技术栈"><a href="#三、必备技术栈" class="headerlink" title="三、必备技术栈"></a>三、必备技术栈</h2><h3 id="框架层"><a href="#框架层" class="headerlink" title="框架层"></a>框架层</h3><p>Spring AI 是 Spring 生态的 LLM 抽象框架，提供统一 API 对接各类大模型。LangChain4j 是 Java 版的 LangChain，专注 Agent 编排和链式调用。Semantic Kernel 是微软的跨语言 Agent 框架，适合企业级场景。</p>
+<h3 id="模型接入层"><a href="#模型接入层" class="headerlink" title="模型接入层"></a>模型接入层</h3><p>需要掌握商业 API 如 GPT-4 和 Claude 的调用方式，了解国产模型如通义千问和 DeepSeek 的接入方法，以及本地部署方案如 Ollama 的使用场景。</p>
+<h3 id="记忆与检索层"><a href="#记忆与检索层" class="headerlink" title="记忆与检索层"></a>记忆与检索层</h3><p>向量数据库是 Agent 长期记忆的核心载体。Milvus 适合高性能场景，PgVector 便于与现有 PostgreSQL 集成，Redis Stack 适合轻量级需求。</p>
+<h3 id="工具集成层"><a href="#工具集成层" class="headerlink" title="工具集成层"></a>工具集成层</h3><p>Function Calling 让 Agent 能调用外部 API 和数据库。需要学习如何设计工具描述、处理参数映射以及管理调用权限。</p>
+<h3 id="工作流层"><a href="#工作流层" class="headerlink" title="工作流层"></a>工作流层</h3><p>复杂 Agent 需要状态管理。Temporal 提供持久化工作流，Spring Statemachine 适合状态流转，Camunda 支持 BPMN 可视化编排。</p>
+<h3 id="可观测层"><a href="#可观测层" class="headerlink" title="可观测层"></a>可观测层</h3><p>Langfuse 用于追踪 Agent 调用链路，Micrometer 采集性能指标，Actuator 提供健康检查端点。</p>
+<h2 id="四、转型建议"><a href="#四、转型建议" class="headerlink" title="四、转型建议"></a>四、转型建议</h2><p>从熟悉的大模型 API 调用开始，先用 Spring AI 实现简单对话功能。然后引入 Function Calling 让 Agent 能操作现有业务接口。接着加入向量数据库实现知识检索能力。最后学习工作流编排处理多步骤任务。</p>
+<p>保持原有 Java 工程化优势，将 Agent 能力作为新模块集成到现有系统，而非完全推翻重建。</p>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>Agent 开发是 Java 开发者进入 AI 领域的重要方向。核心在于掌握框架使用、模型接入、向量存储和工具设计四项能力。建议从增强现有系统开始，逐步引入智能体特性，最终实现传统业务与 AI 能力的深度融合。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">kaii</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2026/03/30/agent%E5%BC%80%E5%8F%91%E6%98%AF%E4%BB%80%E4%B9%88/">http://example.com/2026/03/30/agent%E5%BC%80%E5%8F%91%E6%98%AF%E4%BB%80%E4%B9%88/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">kaii的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/Agent/">Agent</a><a class="post-meta__tags" href="/tags/AI/">AI</a></div><div class="post-share"><div class="social-share" data-image="/img/touxiang.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/01/%E5%9B%9B%E6%9C%88%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/" title="四月的第一天"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">四月的第一天</div></div><div class="info-2"><div class="info-item-1">三月末的独白四月的风吹进了窗，我才惊觉三月已经走远了。 乌鲁木齐的春天总是来得迟疑一些。街边的山桃花刚冒出零星的花苞，粉白色的花瓣在料峭的春寒里微微颤动，像是这座城市在试探着苏醒。而我，却在这早春的季节里，慢慢沉入了某种说不清的疲惫。 一三月的第一天，我拖着行李箱回到学校。宿舍楼的暖气还没停，楼道里弥漫着一股潮湿的气息。室友们陆续回来，大家聊着假期的见闻，而我满脑子都是对未来的憧憬。大二了，终于可以实习了，终于可以证明自己了。那时候的我，天真地以为只要迈出第一步，后面的路就会顺理成章地铺展开来。 第一周的周五，我在宿舍的台灯下匆匆写完了人生中第一份简历。键盘敲击的声音在安静的夜里格外清晰，像是在为我的野心打着节拍。我反复修改着每一个措辞，生怕哪个词用得不够专业，生怕哪个经历写得不够亮眼。那时候的我，还相信简历上的每一个字都能决定我的命运。 周末，我抱着试试看的心态投了几份简历。没想到，命运给了我一个过于仓促的回应——面试通知来得太快，offer来得太容易。我甚至来不及思考这份工作究竟意味着什么，就已经被”软件开发实习生”这个头衔冲昏了头脑。我告诉自己，这就是我想要的生活，忙碌、充...</div></div></div></a><a class="pagination-related" href="/2026/03/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第一篇博客"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">我的第一篇博客</div></div><div class="info-2"><div class="info-item-1">日记这是我的第一篇博客 也算是日记吧 整个博客部署上线很快也很简单 </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">kaii</div><div class="author-info-description">这是我的个人博客，分享学习心得和生活点滴</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dream-kaii"><i class="fab fa-github"></i><span>我的小窝...</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/dream-kaii" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2157497451@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！<br>记录学习与生活</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-%E5%BC%80%E5%8F%91%E8%80%85%E5%A6%82%E4%BD%95%E8%BD%AC%E5%9E%8B-Agent-%E5%BC%80%E5%8F%91"><span class="toc-number">1.</span> <span class="toc-text">Java 开发者如何转型 Agent 开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF-Agent-%E5%BC%80%E5%8F%91"><span class="toc-number">1.1.</span> <span class="toc-text">一、什么是 Agent 开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8E%E4%BC%A0%E7%BB%9F-Java-%E5%BC%80%E5%8F%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.</span> <span class="toc-text">二、与传统 Java 开发的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%BF%85%E5%A4%87%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="toc-number">1.3.</span> <span class="toc-text">三、必备技术栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%B1%82"><span class="toc-number">1.3.1.</span> <span class="toc-text">框架层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%8E%A5%E5%85%A5%E5%B1%82"><span class="toc-number">1.3.2.</span> <span class="toc-text">模型接入层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B0%E5%BF%86%E4%B8%8E%E6%A3%80%E7%B4%A2%E5%B1%82"><span class="toc-number">1.3.3.</span> <span class="toc-text">记忆与检索层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90%E5%B1%82"><span class="toc-number">1.3.4.</span> <span class="toc-text">工具集成层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%B1%82"><span class="toc-number">1.3.5.</span> <span class="toc-text">工作流层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E6%B5%8B%E5%B1%82"><span class="toc-number">1.3.6.</span> <span class="toc-text">可观测层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%BD%AC%E5%9E%8B%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.4.</span> <span class="toc-text">四、转型建议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text">五、总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/01/%E5%9B%9B%E6%9C%88%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/" title="四月的第一天">四月的第一天</a><time datetime="2026-04-01T02:46:00.000Z" title="发表于 2026-04-01 10:46:00">2026-04-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/30/agent%E5%BC%80%E5%8F%91%E6%98%AF%E4%BB%80%E4%B9%88/" title="Java 开发者如何转型 Agent 开发">Java 开发者如何转型 Agent 开发</a><time datetime="2026-03-30T10:41:00.000Z" title="发表于 2026-03-30 18:41:00">2026-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第一篇博客">我的第一篇博客</a><time datetime="2026-03-30T09:26:42.000Z" title="发表于 2026-03-30 17:26:42">2026-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/30/hello-world/" title="Hello World">Hello World</a><time datetime="2026-03-30T08:08:55.128Z" title="发表于 2026-03-30 16:08:55">2026-03-30</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By kaii</span></div><div class="footer_custom_text">记录生活，分享技术</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body></html>
